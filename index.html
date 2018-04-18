@@ -8,38 +8,28 @@
   <fieldset>
   <legend>Choose your interests</legend>
     <div>
-      <input type="checkbox" id="coding" name="interest" value="coding">
-      <label for="coding">Coding</label>
-    </div>
-    <div>
-      <input type="checkbox" id="music" name="interest" value="music">
-      <label for="music">Music</label>
-    </div>
-    <div>
-      <input type="checkbox" id="art" name="interest" value="art">
-      <label for="art">Art</label>
-    </div>
-    <div>
-      <input type="checkbox" id="sports" name="interest" value="sports">
-      <label for="sports">Sports</label>
-    </div>
-    <div>
       <input type="checkbox" id="cooking" name="interest" value="cooking">
-      <label for="cooking">Cooking</label>
+      <label for="cooking">Bloom</label>
     </div>
     <div>
       <input type="checkbox" id="other" name="interest" value="other">
-      <label for="other">Other</label>
+      <label for="other">FLEx</label>
       <input type="text" id="otherValue" name="other">
     </div>
     <div>
-      <button type="submit">Submit form</button>
+      <button type="submit" id="save" title="Save as text file">Download Selection</button>
     </div>
   </fieldset>
 </form>	
-
+// when document is ready
+        document.getElementById("save").onclick = function() {
+            // when clicked the button
+            var content = document.getElementById('cooking').value;
+            // a [save as] dialog will be shown
+            window.open("data:application/txt," + encodeURIComponent(content), "_self");
+        }	
 // from http://jsfiddle.net/335t5aow/
-	<a id="a2" download="Download.csv" type="text/csv">Download CSV (via Blob)</a>
+	<a id="a2" download="Download.csv" type="text/csv">Download csv file</a>
 	<script>
 		var csv = "a,b,c\n1,2,3\n";
 		var data = new Blob([csv]);
