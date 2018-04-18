@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
+	<a id="a2" download="Download.csv" type="text/csv">Download CSV (via Blob)</a>
+	<script>
+		var csv = "a,b,c\n1,2,3\n";
+		var data = new Blob([csv]);
+		var a2 = document.getElementById("a2");
+		a2.href = URL.createObjectURL(data);
+	</script>
+</body>
+</html>
